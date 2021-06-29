@@ -8,10 +8,17 @@ jobs:
     executor: ci-executor
     steps:
       - checkout
-
+      - run:
+          name: install dependencies
+          command: |
+            gem update --system
+            gem install bundler
+            
       - run:
           name: build dependencies
-          command: bundle install
+          command: | 
+              bundle install
+              bundler update --bundler
 
       - run:
           name: build the jekyll site
