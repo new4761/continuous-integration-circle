@@ -13,10 +13,12 @@ jobs:
           command: |
             gem update --system
             gem install bundler
-            bundler update --bundler
+            
       - run:
           name: build dependencies
-          command: bundle install
+          command: | 
+              bundle install
+              bundler update --bundler
 
       - run:
           name: build the jekyll site
