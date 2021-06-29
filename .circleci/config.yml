@@ -12,7 +12,6 @@ jobs:
           name: install dependencies
           command: |
             gem update --system
-            gem uninstall bundler
             gem install bundler
             
       - run:
